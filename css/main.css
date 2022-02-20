@@ -43,7 +43,7 @@ body {
   letter-spacing: 0.03em;
 }
 
-.button-modal-close, .check-box, .check-box span, .member-social-link, .features-item-icon, .overlay-work-text, .clients-item-link {
+.modal-window__close-button, .check-box, .check-box span, .member-social-link, .features-item-icon, .overlay-work-text, .clients-item-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,7 +124,7 @@ body {
   border-radius: 4px;
 }
 
-.modal-name {
+.modal-window__name {
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
@@ -134,7 +134,7 @@ body {
   margin-bottom: 12px;
 }
 
-.button-modal-close {
+.modal-window__close-button {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -145,12 +145,12 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.button-modal-close:hover, .button-modal-close:focus {
+.modal-window__close-button:hover, .modal-window__close-button:focus {
   color: var(--accent-color);
   outline: none;
 }
 
-.modal-close {
+.modal-window__close {
   fill: currentColor;
 }
 
@@ -158,13 +158,31 @@ body {
   position: relative;
 }
 
-.title-input-window {
+.modal-window__input-title {
   font-size: 12px;
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
   color: var(--text-color);
   display: block;
   margin-bottom: 4px;
+}
+
+.modal-window__input {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  padding: 11px 12px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+}
+
+.modal-window__input:focus {
+  border-color: var(--accent-color);
+}
+
+.modal-window__input:focus + .modal-line-icon {
+  fill: var(--accent-color);
 }
 
 .window-user-text {
@@ -175,7 +193,7 @@ body {
   margin-bottom: 30px;
 }
 
-.modal-input-line {
+.modal-window__input-line {
   margin-bottom: 10px;
 }
 
@@ -240,24 +258,6 @@ body {
 .check-form:hover + .check-box > span {
   border: 3px solid var(--accent-color);
   border-radius: 4px;
-}
-
-.modal-input {
-  width: 100%;
-  height: 40px;
-  outline: none;
-  padding: 11px 12px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  padding-left: 42px;
-}
-
-.modal-input:focus {
-  border-color: var(--accent-color);
-}
-
-.modal-input:focus + .modal-line-icon {
-  fill: var(--accent-color);
 }
 
 .comment {
@@ -552,7 +552,7 @@ body {
   margin: 0 auto;
 }
 
-.hero-name {
+.hero__name {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -562,7 +562,7 @@ body {
   color: #ffffff;
 }
 
-.hero-btn {
+.hero__btn {
   display: block;
   width: 200px;
   height: 50px;
