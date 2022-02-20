@@ -1,44 +1,17 @@
 .header {
     border-top: 1px #ffffff;
     border-bottom: 1px solid #ececec;
-}
-.header-logo {
-    padding: 24px 0;
-}
-.header-line {
-    display: flex;
-    align-items: center;
+
+    &-logo {
+        padding: 24px 0;
+    }
+
+    &-line {
+        display: flex;
+        align-items: center;
+    }
 }
 
-.header-link::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    bottom: -1px;
-    left: 0;
-    transition-duration: 250ms;
-    transition-property: background-color;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header-link:hover::after,
-.header-link:focus::after {
-    background-color: var(--accent-color);
-}
-
-.current::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    bottom: -1px;
-    left: 0;
-    background-color: var(--accent-color);
-}
 .header-link {
     position: relative;
     display: block;
@@ -53,6 +26,35 @@
     transition-duration: 250ms;
     transition-property: color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        bottom: -1px;
+        left: 0;
+        transition-duration: 250ms;
+        transition-property: background-color;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:hover::after,
+    &:focus::after {
+        background-color: var(--accent-color);
+    }
+}
+.current::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    bottom: -1px;
+    left: 0;
+    background-color: var(--accent-color);
 }
 
 .header-link:hover,
@@ -65,17 +67,20 @@
 .contacts-item:hover .header-icon {
     fill: var(--accent-color);
 }
-.header-list .header-link.current {
-    color: var(--accent-color);
-}
+
 .header-list {
     display: flex;
+
+    & .header-link.current {
+        color: var(--accent-color);
+    }
 }
 .navigation {
     margin-left: 93px;
 }
 
 .header-icon {
+    margin-right: 10px;
     fill: currentColor;
 }
 .header-list .header-item + .header-item {
@@ -100,10 +105,6 @@
 
 .header-contacts .contacts-item + .contacts-item {
     margin-left: 30px;
-}
-
-.header-icon {
-    margin-right: 10px;
 }
 
 .contacts-mail,
