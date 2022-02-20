@@ -2,8 +2,8 @@
     @extend %color-logo;
     color: #000000;
     text-decoration: none;
-    &-first {
-        @extend %color-logo;
-        color: #2196f3;
-    }
+}
+.header__logo-first {
+    @extend %color-logo;
+    color: #2196f3;
 }
