@@ -25,9 +25,7 @@
         line-height: 16px;
         letter-spacing: 0.03em;
         text-transform: uppercase;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @extend %centering;
         color: #ffffff;
         position: absolute;
         width: 100%;

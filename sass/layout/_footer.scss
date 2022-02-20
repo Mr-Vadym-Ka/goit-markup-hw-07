@@ -28,9 +28,7 @@
         letter-spacing: 0.03em;
         color: #ffffff;
         text-decoration: none;
-        transition-duration: 250ms;
-        transition-property: color;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        @extend %transition-color;
     }
 
     &-contacts {
@@ -40,21 +38,21 @@
 
 .contacts-list {
     text-decoration: none;
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
 }
 
 .contacts-link {
-    transition-duration: 250ms;
-    transition-property: color;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @extend %transition-color;
 }
-.contacts-list:not(:last-child) {
-    margin-bottom: 10px;
-}
-.contacts-list:hover,
-.contacts-list:focus,
-.footer-address:hover,
-.footer-address:focus {
-    color: var(--accent-color);
+
+.contacts-list,
+.footer-address {
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
 }
 .footer-link {
     font-size: 14px;

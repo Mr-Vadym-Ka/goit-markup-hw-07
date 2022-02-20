@@ -11,9 +11,7 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %centering;
     color: #afb1b8;
     transition-duration: 250ms;
     transition-property: background-color, color;
@@ -48,9 +46,7 @@
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    transition-duration: 250ms;
-    transition-property: background-color;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @extend %transition-bkg;
 
     &:hover,
     &:focus {
