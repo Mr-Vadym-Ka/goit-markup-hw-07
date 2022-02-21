@@ -23,7 +23,9 @@
     letter-spacing: 0.02em;
     color: var(--button-color);
     text-decoration: none;
-    @extend %transition-color;
+    transition-duration: 250ms;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     &::after {
         content: "";
@@ -34,7 +36,9 @@
         border-radius: 2px;
         bottom: -1px;
         left: 0;
-        @extend %transition-bkg;
+        transition-duration: 250ms;
+        transition-property: background-color;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     &:hover::after,
@@ -53,18 +57,15 @@
     background-color: var(--accent-color);
 }
 
-.header-link,
-.contacts-link {
-    &:hover,
-    &:focus {
-        color: var(--accent-color);
-    }
+.header-link:hover,
+.header-link:focus,
+.contacts-link:hover,
+.contacts-link:focus {
+    color: var(--accent-color);
 }
 
-.contacts-item:hover {
-    .header-icon {
-        fill: var(--accent-color);
-    }
+.contacts-item:hover .header-icon {
+    fill: var(--accent-color);
 }
 
 .header-list {
@@ -82,10 +83,8 @@
     margin-right: 10px;
     fill: currentColor;
 }
-.header-list {
-    .header-item + .header-item {
-        margin-left: 50px;
-    }
+.header-list .header-item + .header-item {
+    margin-left: 50px;
 }
 .header-contacts {
     display: flex;
@@ -104,10 +103,8 @@
     color: #757575;
 }
 
-.header-contacts {
-    .contacts-item + .contacts-item {
-        margin-left: 30px;
-    }
+.header-contacts .contacts-item + .contacts-item {
+    margin-left: 30px;
 }
 
 .contacts-mail,

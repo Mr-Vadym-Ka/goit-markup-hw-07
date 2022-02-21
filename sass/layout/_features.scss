@@ -15,11 +15,13 @@
 
 .features-item {
     &-icon {
+        display: flex;
         width: 270px;
         height: 120px;
         background-color: #f5f4fa;
         margin-bottom: 30px;
-        @extend %centering;
+        align-items: center;
+        justify-content: center;
     }
 
     & + & {
@@ -27,10 +29,8 @@
     }
 }
 
-.features-list {
-    .features-item {
-        width: 270px;
-    }
+.features-list .features-item {
+    width: 270px;
 }
 .features-list-name {
     font-weight: 700;
@@ -42,7 +42,7 @@
     margin-bottom: 10px;
 }
 .features-list-text {
-    // font-weight: normal;
+    font-weight: normal;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;

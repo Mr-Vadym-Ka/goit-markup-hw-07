@@ -3,10 +3,8 @@
     justify-content: center;
     margin-bottom: 50px;
 }
-.button-list {
-    .item-btn + .item-btn {
-        margin-left: 8px;
-    }
+.button-list .item-btn + .item-btn {
+    margin-left: 8px;
 }
 
 .ourwork-img-title {
