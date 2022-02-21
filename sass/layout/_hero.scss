@@ -13,7 +13,7 @@
     max-width: 1600px;
     margin: 0 auto;
 
-    &__name {
+    &-name {
         font-weight: 900;
         font-size: 44px;
         line-height: 1.36;
@@ -23,7 +23,7 @@
         color: #ffffff;
     }
 
-    &__btn {
+    &-btn {
         display: block;
         width: 200px;
         height: 50px;
