@@ -1,31 +1,28 @@
 .header {
     border-top: 1px #ffffff;
     border-bottom: 1px solid #ececec;
-
-    &-logo {
-        padding: 24px 0;
-    }
-
-    &-line {
-        display: flex;
-        align-items: center;
-    }
+}
+.header__logo {
+    padding: 24px 0;
 }
 
-.header-link {
+.header__line {
+    display: flex;
+    align-items: center;
+}
+
+.header-list__link {
     position: relative;
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
-    font-weight: 500;
     font-size: 14px;
+    font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--button-color);
     text-decoration: none;
-    transition-duration: 250ms;
-    transition-property: color;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @extend %transition-color;
 
     &::after {
         content: "";
@@ -36,9 +33,7 @@
         border-radius: 2px;
         bottom: -1px;
         left: 0;
-        transition-duration: 250ms;
-        transition-property: background-color;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        @extend %transition-bkg;
     }
 
     &:hover::after,
@@ -57,21 +52,26 @@
     background-color: var(--accent-color);
 }
 
-.header-link:hover,
-.header-link:focus,
-.contacts-link:hover,
-.contacts-link:focus {
-    color: var(--accent-color);
+.header-list__link,
+.header-contacts__link {
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
 }
 
-.contacts-item:hover .header-icon {
-    fill: var(--accent-color);
+.header-contacts__item:hover {
+    .header__icon {
+        fill: var(--accent-color);
+    }
 }
 
 .header-list {
     display: flex;
-
-    & .header-link.current {
+    .header-list__item + .header-list__item {
+        margin-left: 50px;
+    }
+    .header-list__link.current {
         color: var(--accent-color);
     }
 }
@@ -79,19 +79,20 @@
     margin-left: 93px;
 }
 
-.header-icon {
+.header-contacts__icon {
     margin-right: 10px;
     fill: currentColor;
 }
-.header-list .header-item + .header-item {
-    margin-left: 50px;
-}
+
 .header-contacts {
     display: flex;
     margin-left: auto;
     align-items: center;
+    .header-contacts__item + .header-contacts__item {
+        margin-left: 30px;
+    }
 }
-.contacts-link {
+.header-contacts__link {
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -103,12 +104,8 @@
     color: #757575;
 }
 
-.header-contacts .contacts-item + .contacts-item {
-    margin-left: 30px;
-}
-
-.contacts-mail,
-.contacts-tel {
+.header-contacts__mail,
+.header-contacts__tel {
     padding-top: 32px;
     padding-bottom: 32px;
 }

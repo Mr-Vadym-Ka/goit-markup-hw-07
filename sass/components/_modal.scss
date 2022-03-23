@@ -27,7 +27,7 @@
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
-.modal-name {
+.modal-window__name {
     font-weight: 700;
     font-size: 20px;
     line-height: 23px;
@@ -36,18 +36,17 @@
     color: var(--title-color);
     margin-bottom: 12px;
 }
-.button-modal-close {
+.modal-window__close-button {
     position: absolute;
     top: 8px;
     right: 8px;
     width: 30px;
     height: 30px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    @extend %centering;
     border-radius: 50%;
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.1);
+
     &:hover,
     &:focus {
         color: var(--accent-color);
@@ -55,13 +54,13 @@
     }
 }
 
-.modal-close {
+.modal-window__close-icon {
     fill: currentColor;
 }
-.input-icon {
+.modal-window__input-icon {
     position: relative;
 }
-.title-input-window {
+.modal-window__input-title {
     font-size: 12px;
     line-height: calc(14 / 12);
     letter-spacing: 0.01em;
@@ -70,51 +69,75 @@
     margin-bottom: 4px;
 }
 
-.window-user-text {
+.modal-window__input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    padding: 11px 12px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding-left: 42px;
+    transition-duration: 250ms;
+    transition-property: border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus,
+    &:hover {
+        border-color: var(--accent-color);
+    }
+    &:hover + .modal-window__line-icon,
+    &:focus + .modal-window__line-icon {
+        fill: var(--accent-color);
+    }
+}
+
+.modal-window__user-text {
     margin-bottom: 20px;
 }
 
-.modal-checkbox {
+.modal-window__checkbox {
     margin-bottom: 30px;
 }
 
-.modal-input-line {
+.modal-window__input-line {
     margin-bottom: 10px;
 }
 
-.modal-line-icon {
+.modal-window__line-icon {
     position: absolute;
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
     fill: var(--img-title-color);
     color: var(--accent-color);
+    transition-duration: 250ms;
+    transition-property: fill;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     &:focus {
         fill: currentColor;
     }
 }
 
-.check-box {
+.modal-window__check-box {
     width: 100%;
     height: 24px;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: var(--text-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %centering;
 
     & span {
         width: 16px;
         height: 15px;
         border: 2px solid var(--border-item-color);
         border-radius: 3px;
-        align-items: center;
-        justify-content: center;
-        display: flex;
+        @extend %centering;
         margin-right: 5px;
+        transition-duration: 250ms;
+        transition-property: border-color;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     &:focus,
@@ -131,42 +154,26 @@
         margin-left: 5px;
     }
 }
-.checkbox-icon {
+.modal-window__checkbox-icon {
     fill: transparent;
 }
 
-.check-form {
-    &:checked + .check-box > span {
+.modal-window__check-form {
+    &:checked + .modal-window__check-box > span {
         background-color: var(--accent-color);
         border: none;
     }
-    &:checked + .check-box .checkbox-icon {
+    &:checked + .modal-window__check-box .modal-window__checkbox-icon {
         fill: var(--hero-btntxt-color);
     }
-    &:focus + .check-box > span,
-    &:hover + .check-box > span {
+    &:focus + .modal-window__check-box > span,
+    &:hover + .modal-window__check-box > span {
         border: 3px solid var(--accent-color);
         border-radius: 4px;
     }
 }
 
-.modal-input {
-    width: 100%;
-    height: 40px;
-    outline: none;
-    padding: 11px 12px;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-    padding-left: 42px;
-    &focus {
-        border-color: var(--accent-color);
-    }
-    &:focus + .modal-line-icon {
-        fill: var(--accent-color);
-    }
-}
-
-.comment {
+.modal-window__comment {
     width: 100%;
     height: 120px;
     font-size: 14px;
@@ -178,7 +185,12 @@
     border-radius: 4px;
     resize: none;
     outline: none;
-    &:focus {
+    transition-duration: 250ms;
+    transition-property: border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus,
+    &:hover {
         border-color: var(--accent-color);
     }
 }
